@@ -51,7 +51,7 @@ public class StringUtil {
         String url = "https://google.com.ua/oauth/authorize?client_id=SS&response_type=code&scope=N_FULL&access_type=offline&redirect_uri=http://localhost/Callback";
         String getParams[] = URLParser(url);
         myassert(getParams.length == 5);
-        myassert(getParams[0] == "{client_id:SS}");
+        myassert(getParams[0].equals("{client_id:SS}"));
 
     }
     public static void main(String args[]){
