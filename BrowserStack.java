@@ -76,7 +76,7 @@ public class BrowserStack {
         browserStack.printStack();
         myassert(browserStack.size() == 4);
         browserStack.pop();
-        myassert(browserStack.pop().equals("f.bk");
+        myassert(browserStack.pop().equals("f.bk"));
         browserStack.peek();
         browserStack.isEmpty();
         browserStack.pop();browserStack.pop();
