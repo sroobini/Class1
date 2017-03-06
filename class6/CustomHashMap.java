@@ -63,5 +63,28 @@ public class CustomHashMap {
     // Given a key, this method will return the position/bucket index of the array
     private int hash(String key) {
 		return Math.abs(key.hashCode()) % size;
-	}
+    }
+
+    
+    public static void main(final String[] args) {
+
+        CustomHashMap myMap = new CustomHashMap(5);
+        myMap.put("Apple", "Cupertino");
+        myMap.put("Google", "Moutain View");
+        myMap.put("Facebook", "Menlo Park");
+        myMap.put("Twitter", "San Francisco");
+        myMap.put("Amazon", "Seattle");
+        myassert(myMap.get("Apple").equalsIngoreCase("Cupertino"));
+        myassert(myMap.get("Twitter").equalsIngoreCase("San Francisco"));
+        myassert(myMap.get("Facebook").equalsIngoreCase("Menlo Park"));
+        myMap.put("Amazon", "Sunnyvale");
+        myMap.remove("Twitter");
+        myassert(myMap.get("Amazon").equalsIngoreCase("Sunnyvale"));
+        myMap.put("Paypal", "San Jose");
+        myassert(myMap.get("Paypal").equalsIngoreCase("San Jose"));
+        myMap.put("Slack", "San Francisco");
+        myMap.put("Oracle", "Foster City");
+        myassert(myMap.get("Slack").equalsIngoreCase("San Francisco"));
+
+    }
 }
