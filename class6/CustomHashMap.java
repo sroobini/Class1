@@ -58,4 +58,10 @@ public class CustomHashMap {
     // check whether if the hashmap is full for not.
     public boolean isFull() {
     }
+    
+    // This method will be used in both put and get methods.
+    // Given a key, this method will return the position/bucket inside the array
+    private int hash(String key) {
+		return Math.abs(key.hashCode()) % size;
+	}
 }
