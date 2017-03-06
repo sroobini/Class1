@@ -60,7 +60,7 @@ public class CustomHashMap {
     }
     
     // This method will be used in both put and get methods.
-    // Given a key, this method will return the position/bucket inside the array
+    // Given a key, this method will return the position/bucket index of the array
     private int hash(String key) {
 		return Math.abs(key.hashCode()) % size;
 	}
