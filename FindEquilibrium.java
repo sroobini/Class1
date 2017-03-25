@@ -12,13 +12,13 @@ public class FindEquilibrium {
 			total += inputArr[i];
 		}
 		
-		for(int i = 0 ; i< inputArr.length ; i++){
-			left += inputArr[i];
+		for(int i = 1 ; i< inputArr.length ; i++){
+			left += inputArr[i-1];
 			
-			right = total - left - inputArr[i+1];
+			right = total - left - inputArr[i];
 			
 			if(left == right){
-				return i+2;
+				return i+1;
 			}
 		}
 		
@@ -27,7 +27,7 @@ public class FindEquilibrium {
 	}
 	
 	public static void main(String[] args){
-		int[] inputArr = {1,-2,0,3,-2,1};
+		int[] inputArr = {1,2,3,4,5};
 		System.out.println(findEquilibriumIndex(inputArr));
 	}
 	
