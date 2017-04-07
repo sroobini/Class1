@@ -45,28 +45,35 @@ public class FindLeastBT {
 		
 		}
 		
-		public Node findLeastElement(Node root1){
-			Node min = root ;
-			Node min1;
-			Node min2;
-			if(root1 == null || root1.left == null || root1.right == null)
-				return root1;
+		public int findLeastElement(Node root){
 			
-			min1 = findLeastElement(root1.left);
-			if( min1.data < min.data){
-				min = min1;
+			int leftMin, rightMin, rootValue = 0 ;
+			
+			if(root != null){
+			rootValue = root.data;
+
+			leftMin = findLeastElement(root.left);
+
+			rightMin = findLeastElement(root.right);			
+			
+			leftMin = Math.min(rootValue, leftMin);
+			rightMin = Math.min(rootValue, rightMin);
+			
+			return Math.min(leftMin, rightMin);
 			}
-			min2 = findLeastElement(root1.right);
-			if(min2.data < min.data){
-				min = min2;
-			}
-			return min;
+			return rootValue;
+			
 		}
 		
+		public void createTree1(){
+			root = new Node(-10);
+			root.left = new Node(2);
+			root.left.left = new Node(-3);
+		}
 		public static void main(String[] args){
 			FindLeastBT myTree = new FindLeastBT();
-			myTree.createTree();
-			System.out.println(myTree.findLeastElement(myTree.root).data);
+			myTree.createTree1();
+			System.out.println(myTree.findLeastElement(myTree.root));
 			
 		}
 	
